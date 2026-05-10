@@ -12,3 +12,8 @@ def index():
     else:
         name = "world"
     return render_template("index.html", name=name)
+from flask import Flask, render_template
+app = Flask(__name__)
+@app.route("/<name>")
+def greet(name):
+return render_template("index.html", name=name)
